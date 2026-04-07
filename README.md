@@ -1,4 +1,5 @@
-# Video Downloader
+You're right! Here's the fully updated README:
+markdown# Video Downloader
 
 A multithreaded video downloader built in C++ with a Python GUI.
 Supports direct file downloads and YouTube videos/playlists.
@@ -11,22 +12,34 @@ Supports direct file downloads and YouTube videos/playlists.
 - Retry logic for failed chunks
 - Resume support for interrupted downloads
 
-## Requirements
-- Windows 10/11
-- MSYS2 UCRT64 with the following packages:
-  - mingw-w64-ucrt-x86_64-gcc
-  - mingw-w64-ucrt-x86_64-cmake
-  - mingw-w64-ucrt-x86_64-curl
-  - mingw-w64-ucrt-x86_64-ffmpeg
-  - mingw-w64-ucrt-x86_64-python
-  - yt-dlp
-
 ## Installation
-1. Clone or download the repository
-2. Open **MSYS2 UCRT64** from the Start Menu
-3. Navigate to the project folder:
-cd /c/Users/<yourname>/video-downloader
-4. Build the project:
+
+### Step 1 — Install MSYS2
+1. Go to [msys2.org](https://msys2.org) and download the installer
+2. Run the installer and install to the default path (`C:\msys64`)
+3. Open **MSYS2 UCRT64** from the Start Menu
+4. Update everything:
+pacman -Syu
+   It may close the window — reopen MSYS2 UCRT64 and run:
+pacman -Su
+
+### Step 2 — Install Dependencies
+In the **MSYS2 UCRT64** terminal run these one by one:
+pacman -S mingw-w64-ucrt-x86_64-gcc
+pacman -S mingw-w64-ucrt-x86_64-cmake
+pacman -S mingw-w64-ucrt-x86_64-curl
+pacman -S mingw-w64-ucrt-x86_64-ffmpeg
+pacman -S mingw-w64-ucrt-x86_64-python
+pacman -S mingw-w64-ucrt-x86_64-python-pip
+pacman -S make
+pacman -S git
+pip install yt-dlp --break-system-packages
+
+### Step 3 — Clone the Repository
+git clone https://github.com/BrandonTLau/video-downloader.git
+cd video-downloader
+
+### Step 4 — Build the Project
 cd build
 cmake .. -G "Unix Makefiles"
 make
@@ -42,7 +55,7 @@ cd /c/Users/<yourname>/video-downloader
 python gui.py
 4. Paste a URL into the URL field
 5. Select an output folder using the Browse button
-6. For YouTube videos, select a quality (480p, 720p, 1080p, Best)
+6. For YouTube videos select a quality (480p, 720p, 1080p, Best)
 7. Click **Download**
 
 ### Command Line
