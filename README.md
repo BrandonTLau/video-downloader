@@ -1,4 +1,4 @@
-# Video Downloader
+markdown# Video Downloader
 
 A multithreaded video downloader built in C++ with a Python GUI.
 Supports direct file downloads and YouTube videos/playlists.
@@ -23,7 +23,7 @@ Supports direct file downloads and YouTube videos/playlists.
 
 ## Installation
 1. Clone or download the repository
-2. Open MSYS2 UCRT64 terminal
+2. Open **MSYS2 UCRT64** from the Start Menu
 3. Navigate to the project folder:
 cd /c/Users/<yourname>/video-downloader
 4. Build the project:
@@ -32,16 +32,18 @@ cmake .. -G "Unix Makefiles"
 make
 cd ..
 
-## Usage
+## How to Run
 
 ### GUI
-Run the GUI from the MSYS2 UCRT64 terminal:
+1. Open **MSYS2 UCRT64** from the Start Menu
+2. Navigate to the project folder:
+cd /c/Users/<yourname>/video-downloader
+3. Run:
 python gui.py
-
-- Paste any URL into the URL field
-- Select an output folder
-- For YouTube videos, select a quality
-- Click Download
+4. Paste a URL into the URL field
+5. Select an output folder using the Browse button
+6. For YouTube videos, select a quality (480p, 720p, 1080p, Best)
+7. Click **Download**
 
 ### Command Line
 ./build/downloader.exe <url> <output_path> <threads>
@@ -76,16 +78,12 @@ video-downloader/
 │   ├── ProgressTracker.h
 │   └── ResumeState.h
 ├── build/
-├── bundle/
-│   ├── ffmpeg.exe
-│   └── yt-dlp.exe
 ├── gui.py
 ├── CMakeLists.txt
 └── README.md
 
 ## Libraries Used
 - libcurl — HTTP requests and chunked downloads
-- nlohmann/json — Resume state serialization
 - yt-dlp — YouTube downloading
 - ffmpeg — Video/audio merging
 - tkinter — GUI
