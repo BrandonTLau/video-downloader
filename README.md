@@ -1,4 +1,4 @@
-markdown# Video Downloader
+# Video Downloader
 
 A multithreaded video downloader built in C++ with a Python GUI.
 Supports direct file downloads and YouTube videos/playlists.
